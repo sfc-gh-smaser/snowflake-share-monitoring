@@ -252,3 +252,11 @@ For issues or questions, check:
 2. `LAST_ERROR` column in SHARE_MONITORING table
 3. Ensure email addresses are verified ([verification instructions](https://docs.snowflake.com/en/user-guide/email-stored-procedures#verifying-email-addresses))
 4. Ensure email addresses are in the ALLOWED_RECIPIENTS list in the notification integration
+
+---
+
+## Beyond Email Notifications
+
+While this solution triggers email notifications when shared data changes, the same pattern could be extended to **trigger your data pipelines** that depend on these tables. For example, you could modify the task to call a stored procedure, execute a query, or kick off downstream processing.
+
+**Note:** If your goal is to automatically refresh downstream tables when source data changes, consider using [Dynamic Tables](https://docs.snowflake.com/en/user-guide/dynamic-tables-intro). Dynamic Tables automatically detect changes in source tables and incrementally refresh—no streams, tasks, or manual orchestration required.
