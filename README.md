@@ -9,6 +9,10 @@ Automated monitoring for Snowflake shared tables and views with email alerts whe
 - **All email recipients must be verified** before they can receive alerts
   - [How to verify email addresses in Snowflake](https://docs.snowflake.com/en/user-guide/email-stored-procedures#verifying-email-addresses)
   - Unverified addresses will cause email delivery to fail silently
+- **Data provider must enable Change Tracking** on shared tables/views
+  - Streams require change tracking to detect data modifications
+  - [How to enable Change Tracking](https://docs.snowflake.com/en/user-guide/streams-manage#enabling-change-tracking-on-views-and-underlying-tables)
+  - Provider runs: `ALTER TABLE <table_name> SET CHANGE_TRACKING = TRUE;`
 
 ### Deployment Steps
 
