@@ -14,6 +14,7 @@ Automated monitoring for Snowflake shared tables and views with email alerts whe
   - [How to enable Change Tracking](https://docs.snowflake.com/en/user-guide/streams-manage#enabling-change-tracking-on-views-and-underlying-tables)
   - For tables: `ALTER TABLE <table_name> SET CHANGE_TRACKING = TRUE;`
   - For views: `ALTER VIEW <view_name> SET CHANGE_TRACKING = TRUE;`
+  - **Note:** You may need to request your data provider to enable this. Ideally, providers should proactively enable change tracking on all objects included in their data shares.
 
 ### Deployment Steps
 
